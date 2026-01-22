@@ -1,8 +1,8 @@
 ---
-title: 
+title: Inicio
 description: 
 published: true
-date: 2026-01-22T17:17:03.662Z
+date: 2026-01-22T17:19:11.522Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T15:43:20.809Z
