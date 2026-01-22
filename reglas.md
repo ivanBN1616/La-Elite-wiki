@@ -1,8 +1,8 @@
 ---
-title: Soporte/reglas
+title: Reglas
 description: 
 published: true
-date: 2026-01-22T21:21:29.664Z
+date: 2026-01-22T21:25:05.959Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T16:04:54.436Z
