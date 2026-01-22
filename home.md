@@ -2,19 +2,13 @@
 title: 
 description: 
 published: true
-date: 2026-01-22T17:13:34.235Z
+date: 2026-01-22T17:17:03.662Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T15:43:20.809Z
 ---
 
-#             <p align="center">       🦖 La Élite Wiki
-
----
-
-<p align="center">
-  <img src="/gemini_generated_image_ykzssyykzssyykzs.png" width="100%" style="max-height: 600px; object-fit: cover; border-radius: 15px; border: 2px solid #222; box-shadow: 0px 4px 15px rgba(0,0,0,0.5);">
-</p>
+# 🦖 La Élite Wiki
 
 ---
 
