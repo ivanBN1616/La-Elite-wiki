@@ -2,25 +2,26 @@
 title: Home
 description: 
 published: true
-date: 2026-01-22T16:56:51.475Z
+date: 2026-01-22T17:11:17.842Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T15:43:20.809Z
 ---
 
-# 🦖 Bienvenida a La Élite Wiki 
-<p align="center">
-  <img src="/gemini_generated_image_4as5k54as5k54as5.png" width="200">
-</p>
-
-Bienvenido al centro de conocimiento oficial de nuestro servidor. Aquí encontrarás toda la información necesaria para sobrevivir y dominar el mapa.
+# 🦖 Bienvenida a La Élite Wiki
 
 ---
 
+<p align="center">
+  <img src="/gemini_generated_image_ykzssyykzssyykzs.png" width="100%" style="max-height: 500px; object-fit: cover; border-radius: 15px; border: 2px solid #222; box-shadow: 0px 4px 15px rgba(0,0,0,0.5);">
+</p>
 
-## 📢 Estado del Servidor
-> ### 🟢 **ONLINE**
-> *Última actualización: {{NOW}}*  
+<p align="center">
+  <br>
+  <strong>📢 Estado del Servidor</strong><br>
+  <span style="color: #2ecc71; font-size: 1.5em;">🟢 <b>ONLINE</b></span><br>
+  <em>Última actualización: {{NOW}}</em>
+</p>
 
 ---
 
@@ -33,9 +34,9 @@ Bienvenido al centro de conocimiento oficial de nuestro servidor. Aquí encontra
 ---
 
 ## 🛠️ Objetivos Actuales del Clan
-* [ ] Construir la base avanzada en el Volcán.
-* [ ] Farmear 500 de Polímero orgánico.
-* [ ] Organizar el Boss Fight del fin de semana.
+* [ ] 🌋 Construir la base avanzada en el Volcán.
+* [ ] 🧪 Farmear 500 de Polímero orgánico.
+* [ ] 🐉 Organizar el Boss Fight del fin de semana.
 
 ---
 
