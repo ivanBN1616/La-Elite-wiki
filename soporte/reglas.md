@@ -2,7 +2,7 @@
 title: Reglas
 description: 
 published: true
-date: 2026-01-22T21:28:47.816Z
+date: 2026-01-22T21:28:54.729Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T16:04:54.436Z
