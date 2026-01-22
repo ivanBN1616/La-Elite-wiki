@@ -2,13 +2,13 @@
 title: 
 description: 
 published: true
-date: 2026-01-22T17:12:43.817Z
+date: 2026-01-22T17:13:34.235Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T15:43:20.809Z
 ---
 
-# 🦖 Bienvenida a La Élite Wiki
+#             <p align="center">       🦖 La Élite Wiki
 
 ---
 
