@@ -2,7 +2,7 @@
 title: Inicio
 description: 
 published: true
-date: 2026-01-23T16:32:58.620Z
+date: 2026-01-23T21:47:44.607Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T15:43:20.809Z
@@ -17,6 +17,13 @@ dateCreated: 2026-01-22T15:43:20.809Z
 | 📜 **Reglas** | 🦕 **Dinos** | 🧪 **Breeding** |
 | :--- | :--- | :--- |
 | [Ver Normativa](/soporte/reglas) | [Base de Datos](/criaturas) | [La crianza](/guias/breeding) |
+
+---
+# 👥 Directorio de la Tribu
+*Lista actualizada de todos los miembros que han registrado su establo.*
+
+{{#list: /jugadores}}
+
 
 ---
 
