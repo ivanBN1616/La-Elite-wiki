@@ -2,95 +2,98 @@
 title: Importador Genético
 description: 
 published: true
-date: 2026-01-23T05:43:20.447Z
+date: 2026-01-23T05:47:40.987Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-23T05:39:45.719Z
 ---
 
-# 📥 Importador Genético de La Élite
-
-Arrastra tu archivo `.ini` de exportación (localizado en `ARKSA/Saved/DinoExports`) para obtener el código de tu ficha.
-
-<html>
-<div style="background: #111; padding: 20px; border-radius: 10px; border: 1px solid #333; font-family: sans-serif; color: white;">
+```plaintext
+<div class="elite-importer" style="background: #111; color: white; padding: 20px; border: 2px solid #333; border-radius: 10px; font-family: sans-serif;">
+    <h2 style="color: #ff4d4d; margin-top: 0;">🧬 Importador Genético Élite</h2>
+    <p style="font-size: 0.9em; color: #888;">Arrastra el archivo .ini de tu exportación de ASA abajo:</p>
     
-    <div id="drop-area" style="border: 2px dashed #ff4d4d; padding: 30px; text-align: center; border-radius: 10px; cursor: pointer; background: #0a0a0a;">
-        <p style="margin: 0; font-size: 1.1em;">📁 Arrastra tu archivo de exportación aquí</p>
-        <p style="color: #888; font-size: 0.8em; margin-top: 10px;">O haz clic para buscarlo en tu PC</p>
-        <input type="file" id="fileSelector" style="display: none;" accept=".ini">
+    <div id="drop-zone" style="border: 2px dashed #ff4d4d; padding: 40px; text-align: center; border-radius: 8px; background: #000; cursor: pointer; margin-bottom: 20px;">
+        <span id="status-text" style="font-weight: bold; color: #ff4d4d;">📁 CLIC O ARRASTRA ARCHIVO .INI</span>
+        <input type="file" id="file-input" style="display: none;" accept=".ini">
     </div>
 
-    <div id="preview-section" style="display: none; margin-top: 20px;">
-        <h4 style="color: #4dff88; margin-bottom: 10px;">✅ Código Generado:</h4>
-        <div style="background: #000; padding: 15px; border-radius: 5px; border: 1px solid #444;">
-            <pre id="md-result" style="white-space: pre-wrap; color: #ccc; font-family: monospace; font-size: 0.9em; margin: 0;"></pre>
+    <div id="output-container" style="display: none;">
+        <div style="background: #1a1a1a; padding: 15px; border-radius: 5px; border: 1px solid #444;">
+            <label style="display: block; font-size: 0.8em; color: #4dff88; margin-bottom: 5px;">CÓDIGO PARA TU FICHA (COPIAR Y PEGAR):</label>
+            <textarea id="md-output" style="width: 100%; height: 200px; background: #000; color: #ccc; border: 1px solid #333; font-family: monospace; padding: 10px; font-size: 13px;"></textarea>
         </div>
-        <button id="copy-btn" style="margin-top: 15px; background: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
-            Copiar Código
+        <button id="copy-btn" style="margin-top: 15px; width: 100%; padding: 12px; background: #ff4d4d; border: none; color: white; font-weight: bold; border-radius: 5px; cursor: pointer;">
+            📋 COPIAR CÓDIGO GENERADO
         </button>
     </div>
 </div>
 
 <script>
-    const area = document.getElementById('drop-area');
-    const selector = document.getElementById('fileSelector');
-    const resultBox = document.getElementById('preview-section');
-    const resultText = document.getElementById('md-result');
-    const copyBtn = document.getElementById('copy-btn');
+    (function() {
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const outputContainer = document.getElementById('output-container');
+        const mdOutput = document.getElementById('md-output');
+        const copyBtn = document.getElementById('copy-btn');
+        const statusText = document.getElementById('status-text');
 
-    area.onclick = () => selector.click();
-    selector.onchange = (e) => processFile(e.target.files[0]);
+        dropZone.addEventListener('click', () => fileInput.click());
 
-    area.ondragover = (e) => { e.preventDefault(); area.style.backgroundColor = '#1a1111'; };
-    area.ondragleave = () => area.style.backgroundColor = '#0a0a0a';
-    area.ondrop = (e) => {
-        e.preventDefault();
-        area.style.backgroundColor = '#0a0a0a';
-        processFile(e.dataTransfer.files[0]);
-    };
+        fileInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
 
-    function processFile(file) {
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            const content = e.target.result;
-            const lines = content.split('\n');
-            const data = {};
-            
-            lines.forEach(line => {
-                const parts = line.split('=');
-                if (parts.length === 2) data[parts[0].trim()] = parts[1].trim();
-            });
-
-            // Mapeo de datos del .ini de ASA
-            const nombre = data['CharacterName'] || 'Sin Nombre';
-            const especie = data['DinoClassName'] || 'Desconocido';
-            const lv = data['CharacterLevel'] || '0';
-            
-            // Construcción del texto MD
-            let finalMD = "## 🦖 Ficha de " + nombre + "\n";
-            finalMD += "**Especie:** " + especie + " | **Nivel:** " + lv + "\n\n";
-            finalMD += "| Stat | Puntos (Wild) |\n";
-            finalMD += "| :--- | :--- |\n";
-            finalMD += "| ❤️ Vida | " + (data['HealthPoints'] || 0) + " pts |\n";
-            finalMD += "| ⚡ Stamina | " + (data['StaminaPoints'] || 0) + " pts |\n";
-            finalMD += "| ⚖️ Peso | " + (data['WeightPoints'] || 0) + " pts |\n";
-            finalMD += "| ⚔️ Daño | " + (data['MeleeDamagePoints'] || 0) + " pts |\n";
-            finalMD += "| 🏃 Vel. | " + (data['SpeedPoints'] || 0) + " pts |\n\n";
-            finalMD += "---";
-
-            resultText.innerText = finalMD;
-            resultBox.style.display = 'block';
-        };
-        reader.readAsText(file);
-    }
-
-    copyBtn.onclick = () => {
-        const text = resultText.innerText;
-        navigator.clipboard.writeText(text).then(() => {
-            alert("¡Copiado! Ahora pégalo en tu página de usuario.");
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = '#4dff88';
         });
-    };
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.style.borderColor = '#ff4d4d';
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            handleFile(e.dataTransfer.files[0]);
+        });
+
+        function handleFile(file) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const text = e.target.result;
+                const lines = text.split('\n');
+                const stats = {};
+                lines.forEach(l => {
+                    const p = l.split('=');
+                    if(p.length === 2) stats[p[0].trim()] = p[1].trim();
+                });
+
+                const name = stats['CharacterName'] || 'Dino';
+                const level = stats['CharacterLevel'] || '0';
+                
+                let md = "### 🦖 Ficha de " + name + " (Lvl " + level + ")\n\n";
+                md += "| Stat | Puntos (Wild) |\n";
+                md += "| :--- | :--- |\n";
+                md += "| ❤️ Vida | " + (stats['HealthPoints'] || 0) + " pts |\n";
+                md += "| ⚡ Stamina | " + (stats['StaminaPoints'] || 0) + " pts |\n";
+                md += "| ⚖️ Peso | " + (stats['WeightPoints'] || 0) + " pts |\n";
+                md += "| ⚔️ Daño | " + (stats['MeleeDamagePoints'] || 0) + " pts |\n";
+                md += "| 🏃 Vel. | " + (stats['SpeedPoints'] || 0) + " pts |\n\n";
+                md += "---";
+
+                mdOutput.value = md;
+                outputContainer.style.display = 'block';
+                statusText.innerText = "✅ ARCHIVO CARGADO";
+                statusText.style.color = "#4dff88";
+            };
+            reader.readAsText(file);
+        }
+
+        copyBtn.addEventListener('click', () => {
+            mdOutput.select();
+            document.execCommand('copy');
+            alert('¡Copiado! Pégalo en tu página personal.');
+        });
+    })();
 </script>
-</html>
+```
