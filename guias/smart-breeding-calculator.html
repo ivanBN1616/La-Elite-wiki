@@ -1,0 +1,122 @@
+<!--
+title: Calculadora de breeding
+description: 
+published: true
+date: 2026-01-23T01:56:35.071Z
+tags: 
+editor: ckeditor
+dateCreated: 2026-01-23T01:55:54.398Z
+-->
+
+<h1 id="calculadora-smart-breeding-la-élite" class="toc-header"> 🧬 Calculadora Smart Breeding - La Élite</h1>
+<p>Introduce los stats de tu criatura (recién tameada o recién nacida) para calcular sus <strong>puntos salvajes</strong>. Recuerda: En este servidor, lo que se hereda son los puntos, no el nivel.</p>
+<hr><div>
+
+</div><div class="asb-container">
+    <div class="asb-config">
+        <h3 id="h-1-selecciona-criatura-y-stats" class="toc-header"> 1. Selecciona Criatura y Stats</h3>
+        <label>Criatura:</label>
+        <select id="dinoType">
+            <option value="rex">T-Rex</option>
+            <option value="giga">Giganotosaurus</option>
+            <option value="stego">Stegosaurus</option>
+            <option value="carcha">Carcharodontosaurus</option>
+        </select>
+<pre class="prismjs line-numbers" v-pre="true"><code class="language-">    &lt;div class="stat-input-grid"&gt;
+        &lt;div class="stat-field"&gt;
+            &lt;label&gt;Vida (HP):&lt;/label&gt;
+            &lt;input type="number" id="hp_val" placeholder="Ej: 12000" oninput="calculatePoints()"&gt;
+            &lt;span id="hp_pts" class="pts-badge"&gt;0 pts&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="stat-field"&gt;
+            &lt;label&gt;Energía (Stam):&lt;/label&gt;
+            &lt;input type="number" id="stam_val" placeholder="Ej: 1500" oninput="calculatePoints()"&gt;
+            &lt;span id="stam_pts" class="pts-badge"&gt;0 pts&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="stat-field"&gt;
+            &lt;label&gt;Daño (Melee %):&lt;/label&gt;
+            &lt;input type="number" id="melee_val" placeholder="Ej: 450" oninput="calculatePoints()"&gt;
+            &lt;span id="melee_pts" class="pts-badge"&gt;0 pts&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="asb-results"&gt;
+    &lt;h3&gt;2. Análisis de Potencial&lt;/h3&gt;
+    &lt;div id="evaluation-box" class="eval-box"&gt;
+        Esperando datos...
+    &lt;/div&gt;
+    &lt;div class="legend"&gt;
+        &lt;p&gt;&lt;span style="color:#ff4d4d"&gt;■&lt;/span&gt; 0-30 pts: Basura / Inicial&lt;/p&gt;
+        &lt;p&gt;&lt;span style="color:#ffa64d"&gt;■&lt;/span&gt; 31-44 pts: Bueno / Aceptable&lt;/p&gt;
+        &lt;p&gt;&lt;span style="color:#4dff88"&gt;■&lt;/span&gt; 45+ pts: Élite / Para Cría&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<style>
+    .asb-container {
+        display: flex;
+        gap: 20px;
+        background: #111;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #333;
+        color: white;
+        font-family: sans-serif;
+    }
+    .asb-config, .asb-results { flex: 1; }
+    
+    h3 { color: #ff4d4d; border-bottom: 1px solid #333; padding-bottom: 10px; }
+    
+    select, input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        background: #000;
+        border: 1px solid #444;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .stat-input-grid { display: flex; flex-direction: column; gap: 15px; margin-top: 15px; }
+    .stat-field { display: flex; align-items: center; gap: 10px; }
+    .stat-field label { width: 120px; font-size: 0.9em; }
+    
+    .pts-badge {
+        min-width: 60px;
+        padding: 5px;
+        background: #222;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8em;
+    }
+
+    .eval-box {
+        background: #000;
+        padding: 20px;
+        border-radius: 8px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 1px dashed #444;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .legend { margin-top: 20px; font-size: 0.8em; color: #888; }
+</style>
+
+
+<hr>
+<h3 id="️-cómo-funciona-este-bloque" class="toc-header"> ⚠️ Cómo funciona este bloque:</h3>
+<ol>
+<li><strong>Ingeniería Inversa:</strong> El script toma el valor que el usuario escribe y resta el valor base del dino de nivel 1. Luego lo divide por lo que gana cada dino por punto salvaje.</li>
+<li><strong>Validación de Meta:</strong> Automáticamente le dice al usuario si el dino sirve para el servidor basándose en los puntos (Tier S = 45+).</li>
+<li><strong>Ligero:</strong> No usa base de datos ni memoria del servidor, todo el cálculo se hace en el móvil/PC del usuario.</li>
+</ol>
+<p><strong>¿Quieres que añada más dinosaurios a la lista del script o que profundicemos en la guía de cómo exportar los archivos <code>.ini</code> directamente a esta página?</strong></p>
+</div>
