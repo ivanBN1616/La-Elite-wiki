@@ -2,7 +2,7 @@
 title: Inicio
 description: 
 published: true
-date: 2026-01-22T17:19:11.522Z
+date: 2026-01-23T16:30:58.131Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T15:43:20.809Z
@@ -16,7 +16,7 @@ dateCreated: 2026-01-22T15:43:20.809Z
 
 | 📜 **Reglas** | 🦕 **Dinos** | ⚔️ **Raideos** |
 | :--- | :--- | :--- |
-| [Ver Normativa](/normas) | [Base de Datos](/dinos) | [Estrategias](/combate) |
+| [Ver Normativa](/soporte/reglas) | [Base de Datos](/criaturas) | [Estrategias](/combate) |
 
 ---
 
