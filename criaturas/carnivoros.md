@@ -2,7 +2,7 @@
 title: Carnívoros 
 description: 
 published: true
-date: 2026-01-23T01:23:07.414Z
+date: 2026-01-23T17:11:11.434Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-23T01:23:07.414Z
@@ -52,7 +52,6 @@ Bienvenido al centro de inteligencia de depredadores. Utiliza los filtros rápid
 *Dinos que requieren un control estricto de mutaciones para el Meta del servidor.*
 
 * **Daeodon:** (Línea de Comida/Energía).
-* **Shadowmane:** (Línea de Daño/Armadura Natural).
 * **Reaper King:** (Solo estadísticas base, no crían pero se catalogan aquí).
 
 ---
