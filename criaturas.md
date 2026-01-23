@@ -2,7 +2,7 @@
 title: Criaturas
 description: 
 published: true
-date: 2026-01-22T21:57:03.000Z
+date: 2026-01-23T16:29:42.998Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T21:57:03.000Z
@@ -15,6 +15,8 @@ Bienvenido a la base de datos oficial. Aquí encontrarás información detallada
 ---
 
 ## 📂 Selecciona una Categoría
+
+---
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
 
