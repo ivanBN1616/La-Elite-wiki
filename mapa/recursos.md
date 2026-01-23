@@ -1,8 +1,8 @@
 ---
-title: mapa/recursos
+title: Recursos
 description: 
 published: true
-date: 2026-01-22T21:25:44.252Z
+date: 2026-01-23T22:17:29.351Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T16:06:18.320Z
