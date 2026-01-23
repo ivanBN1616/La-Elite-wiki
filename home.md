@@ -2,7 +2,7 @@
 title: Inicio
 description: 
 published: true
-date: 2026-01-23T16:32:05.671Z
+date: 2026-01-23T16:32:31.409Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T15:43:20.809Z
@@ -16,7 +16,7 @@ dateCreated: 2026-01-22T15:43:20.809Z
 
 | 📜 **Reglas** | 🦕 **Dinos** | ⚔️ **Breeding** |
 | :--- | :--- | :--- |
-| [Ver Normativa](/soporte/reglas) | [Base de Datos](/criaturas) | [La crianza](/combate) |
+| [Ver Normativa](/soporte/reglas) | [Base de Datos](/criaturas) | [La crianza](/guias/breeding) |
 
 ---
 
