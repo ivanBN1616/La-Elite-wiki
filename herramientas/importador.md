@@ -2,138 +2,95 @@
 title: Importador Genético
 description: 
 published: true
-date: 2026-01-23T05:39:45.720Z
+date: 2026-01-23T05:43:20.447Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-23T05:39:45.719Z
 ---
 
 # 📥 Importador Genético de La Élite
-Arrastra tu archivo de exportación de ASA (.ini) aquí para generar tu ficha de registro automáticamente.
 
----
+Arrastra tu archivo `.ini` de exportación (localizado en `ARKSA/Saved/DinoExports`) para obtener el código de tu ficha.
 
 <html>
-<div class="import-container">
-    <div id="drop-zone">
-        <p>Arrastra aquí tu archivo de exportación (.ini)</p>
-        <span>O haz clic para seleccionar</span>
-        <input type="file" id="fileInput" accept=".ini" style="display:none">
+<div style="background: #111; padding: 20px; border-radius: 10px; border: 1px solid #333; font-family: sans-serif; color: white;">
+    
+    <div id="drop-area" style="border: 2px dashed #ff4d4d; padding: 30px; text-align: center; border-radius: 10px; cursor: pointer; background: #0a0a0a;">
+        <p style="margin: 0; font-size: 1.1em;">📁 Arrastra tu archivo de exportación aquí</p>
+        <p style="color: #888; font-size: 0.8em; margin-top: 10px;">O haz clic para buscarlo en tu PC</p>
+        <input type="file" id="fileSelector" style="display: none;" accept=".ini">
     </div>
 
-    <div id="result-area" style="display:none;">
-        <h3>✅ Datos Extraídos</h3>
-        <textarea id="output-md" readonly></textarea>
-        <button onclick="copyToClipboard()">Copiar Formato Markdown</button>
+    <div id="preview-section" style="display: none; margin-top: 20px;">
+        <h4 style="color: #4dff88; margin-bottom: 10px;">✅ Código Generado:</h4>
+        <div style="background: #000; padding: 15px; border-radius: 5px; border: 1px solid #444;">
+            <pre id="md-result" style="white-space: pre-wrap; color: #ccc; font-family: monospace; font-size: 0.9em; margin: 0;"></pre>
+        </div>
+        <button id="copy-btn" style="margin-top: 15px; background: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+            Copiar Código
+        </button>
     </div>
 </div>
 
-<style>
-    .import-container { background: #111; padding: 25px; border-radius: 12px; border: 1px solid #333; color: white; }
-    #drop-zone {
-        border: 2px dashed #ff4d4d;
-        padding: 40px;
-        text-align: center;
-        cursor: pointer;
-        background: #0a0a0a;
-        transition: 0.3s;
-        border-radius: 8px;
-    }
-    #drop-zone:hover { background: #1a0a0a; border-color: #ff8888; }
-    #result-area { margin-top: 25px; }
-    textarea {
-        width: 100%;
-        height: 300px;
-        background: #000;
-        color: #4dff88;
-        padding: 15px;
-        font-family: monospace;
-        border: 1px solid #333;
-        border-radius: 6px;
-        margin-bottom: 15px;
-    }
-    button {
-        background: #ff4d4d;
-        color: white;
-        border: none;
-        padding: 12px 25px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-    button:hover { background: #ff6666; }
-</style>
-
 <script>
-    const dropZone = document.getElementById('drop-zone');
-    const fileInput = document.getElementById('fileInput');
-    const output = document.getElementById('output-md');
-    const resultArea = document.getElementById('result-area');
+    const area = document.getElementById('drop-area');
+    const selector = document.getElementById('fileSelector');
+    const resultBox = document.getElementById('preview-section');
+    const resultText = document.getElementById('md-result');
+    const copyBtn = document.getElementById('copy-btn');
 
-    dropZone.onclick = () => fileInput.click();
+    area.onclick = () => selector.click();
+    selector.onchange = (e) => processFile(e.target.files[0]);
 
-    fileInput.onchange = e => handleFile(e.target.files[0]);
-
-    dropZone.ondragover = e => { e.preventDefault(); dropZone.style.borderColor = '#4dff88'; };
-    dropZone.ondragleave = () => dropZone.style.borderColor = '#ff4d4d';
-    dropZone.ondrop = e => {
+    area.ondragover = (e) => { e.preventDefault(); area.style.backgroundColor = '#1a1111'; };
+    area.ondragleave = () => area.style.backgroundColor = '#0a0a0a';
+    area.ondrop = (e) => {
         e.preventDefault();
-        handleFile(e.dataTransfer.files[0]);
+        area.style.backgroundColor = '#0a0a0a';
+        processFile(e.dataTransfer.files[0]);
     };
 
-    function handleFile(file) {
+    function processFile(file) {
         if (!file) return;
         const reader = new FileReader();
-        reader.onload = e => parseIni(e.target.result, file.name);
+        reader.onload = (e) => {
+            const content = e.target.result;
+            const lines = content.split('\n');
+            const data = {};
+            
+            lines.forEach(line => {
+                const parts = line.split('=');
+                if (parts.length === 2) data[parts[0].trim()] = parts[1].trim();
+            });
+
+            // Mapeo de datos del .ini de ASA
+            const nombre = data['CharacterName'] || 'Sin Nombre';
+            const especie = data['DinoClassName'] || 'Desconocido';
+            const lv = data['CharacterLevel'] || '0';
+            
+            // Construcción del texto MD
+            let finalMD = "## 🦖 Ficha de " + nombre + "\n";
+            finalMD += "**Especie:** " + especie + " | **Nivel:** " + lv + "\n\n";
+            finalMD += "| Stat | Puntos (Wild) |\n";
+            finalMD += "| :--- | :--- |\n";
+            finalMD += "| ❤️ Vida | " + (data['HealthPoints'] || 0) + " pts |\n";
+            finalMD += "| ⚡ Stamina | " + (data['StaminaPoints'] || 0) + " pts |\n";
+            finalMD += "| ⚖️ Peso | " + (data['WeightPoints'] || 0) + " pts |\n";
+            finalMD += "| ⚔️ Daño | " + (data['MeleeDamagePoints'] || 0) + " pts |\n";
+            finalMD += "| 🏃 Vel. | " + (data['SpeedPoints'] || 0) + " pts |\n\n";
+            finalMD += "---";
+
+            resultText.innerText = finalMD;
+            resultBox.style.display = 'block';
+        };
         reader.readAsText(file);
     }
 
-    function parseIni(content, filename) {
-        const lines = content.split('\n');
-        const stats = {};
-        
-        lines.forEach(line => {
-            if (line.includes('=')) {
-                const [key, val] = line.split('=');
-                stats[key.trim()] = val.trim();
-            }
+    copyBtn.onclick = () => {
+        const text = resultText.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert("¡Copiado! Ahora pégalo en tu página de usuario.");
         });
-
-        // Mapeo de stats (Esto depende de cómo exporte ASA, ajustamos nombres comunes)
-        const name = stats['CharacterName'] || 'Dino Desconocido';
-        const type = stats['DinoClassName'] || 'Especie';
-        const level = stats['CharacterLevel'] || '0';
-        
-        // Puntos Salvajes (Wild Levels) - ASA suele exportarlos como 'HealthPoints', etc.
-        const hp = stats['HealthPoints'] || '0';
-        const st = stats['StaminaPoints'] || '0';
-        const ox = stats['OxygenPoints'] || '0';
-        const fo = stats['FoodPoints'] || '0';
-        const we = stats['WeightPoints'] || '0';
-        const me = stats['MeleeDamagePoints'] || '0';
-        const sp = stats['SpeedPoints'] || '0';
-
-        let md = `# 🦖 Registro: ${name}\n`;
-        md += `**Especie:** ${type} | **Nivel:** ${level}\n\n`;
-        md += `| Stat | Puntos Salvajes (Wild) |\n`;
-        md += `| :--- | :--- |\n`;
-        md += `| ❤️ Vida | **${hp} pts** |\n`;
-        md += `| ⚡ Energía | **${st} pts** |\n`;
-        md += `| 🧪 Oxígeno | **${ox} pts** |\n`;
-        md += `| 🍖 Comida | **${fo} pts** |\n`;
-        md += `| ⚖️ Peso | **${we} pts** |\n`;
-        md += `| ⚔️ Daño | **${me} pts** |\n`;
-        md += `| 🏃 Vel. | **${sp} pts** |\n\n`;
-        md += `--- \n*Ficha generada automáticamente desde: ${filename}*`;
-
-        output.value = md;
-        resultArea.style.display = 'block';
-    }
-
-    function copyToClipboard() {
-        output.select();
-        document.execCommand('copy');
-        alert('¡Copiado! Ahora pégalo en tu página de usuario.');
-    }
+    };
 </script>
 </html>
