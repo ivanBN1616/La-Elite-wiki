@@ -2,31 +2,96 @@
 title: Importador Genético
 description: 
 published: true
-date: 2026-01-23T05:43:56.157Z
+date: 2026-01-23T05:44:54.124Z
 tags: 
 editor: ckeditor
 dateCreated: 2026-01-23T05:39:45.719Z
 -->
 
-<h1 id="importador-genético-de-la-élite" class="toc-header"> 📥 Importador Genético de La Élite</h1>
-<p>Arrastra tu archivo <code>.ini</code> de exportación (localizado en <code>ARKSA/Saved/DinoExports</code>) para obtener el código de tu ficha.</p><div>
-
-</div><div style="background: #111; padding: 20px; border-radius: 10px; border: 1px solid #333; font-family: sans-serif; color: white;">
-<pre class="prismjs line-numbers" v-pre="true"><code class="language-">&lt;div id="drop-area" style="border: 2px dashed #ff4d4d; padding: 30px; text-align: center; border-radius: 10px; cursor: pointer; background: #0a0a0a;"&gt;
-    &lt;p style="margin: 0; font-size: 1.1em;"&gt;📁 Arrastra tu archivo de exportación aquí&lt;/p&gt;
-    &lt;p style="color: #888; font-size: 0.8em; margin-top: 10px;"&gt;O haz clic para buscarlo en tu PC&lt;/p&gt;
-    &lt;input type="file" id="fileSelector" style="display: none;" accept=".ini"&gt;
-&lt;/div&gt;
-
-&lt;div id="preview-section" style="display: none; margin-top: 20px;"&gt;
-    &lt;h4 style="color: #4dff88; margin-bottom: 10px;"&gt;✅ Código Generado:&lt;/h4&gt;
-    &lt;div style="background: #000; padding: 15px; border-radius: 5px; border: 1px solid #444;"&gt;
-        &lt;pre id="md-result" style="white-space: pre-wrap; color: #ccc; font-family: monospace; font-size: 0.9em; margin: 0;"&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;button id="copy-btn" style="margin-top: 15px; background: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;"&gt;
-        Copiar Código
-    &lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-</div>
-
+<p>&lt;div class="elite-importer" style="background: #111; color: white; padding: 20px; border: 2px solid #333; border-radius: 10px; font-family: sans-serif;"&gt;</p>
+<p>&nbsp; &nbsp;&lt;h2 style="color: #ff4d4d; margin-top: 0;"&gt;🧬 Importador Genético Élite&lt;/h2&gt;</p>
+<p>&nbsp; &nbsp;&lt;p style="font-size: 0.9em; color: #888;"&gt;Arrastra el archivo .ini de tu exportación de ASA abajo:&lt;/p&gt;</p>
+<p>&nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp;&lt;div id="drop-zone" style="border: 2px dashed #ff4d4d; padding: 40px; text-align: center; border-radius: 8px; background: #000; cursor: pointer; margin-bottom: 20px;"&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;span id="status-text" style="font-weight: bold; color: #ff4d4d;"&gt;📁 CLIC O ARRASTRA ARCHIVO .INI&lt;/span&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;input type="file" id="file-input" style="display: none;" accept=".ini"&gt;</p>
+<p>&nbsp; &nbsp;&lt;/div&gt;</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp;&lt;div id="output-container" style="display: none;"&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div style="background: #1a1a1a; padding: 15px; border-radius: 5px; border: 1px solid #444;"&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;label style="display: block; font-size: 0.8em; color: #4dff88; margin-bottom: 5px;"&gt;CÓDIGO PARA TU FICHA (COPIAR Y PEGAR):&lt;/label&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;textarea id="md-output" style="width: 100%; height: 200px; background: #000; color: #ccc; border: 1px solid #333; font-family: monospace; padding: 10px; font-size: 13px;"&gt;&lt;/textarea&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;button id="copy-btn" style="margin-top: 15px; width: 100%; padding: 12px; background: #ff4d4d; border: none; color: white; font-weight: bold; border-radius: 5px; cursor: pointer;"&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;📋 COPIAR CÓDIGO GENERADO</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/button&gt;</p>
+<p>&nbsp; &nbsp;&lt;/div&gt;</p>
+<p>&lt;/div&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;script&gt;</p>
+<p>&nbsp; &nbsp;(function() {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;const dropZone = document.getElementById('drop-zone');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;const fileInput = document.getElementById('file-input');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;const outputContainer = document.getElementById('output-container');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;const mdOutput = document.getElementById('md-output');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;const copyBtn = document.getElementById('copy-btn');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;const statusText = document.getElementById('status-text');</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;dropZone.addEventListener('click', () =&gt; fileInput.click());</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;fileInput.addEventListener('change', (e) =&gt; handleFile(e.target.files[0]));</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;dropZone.addEventListener('dragover', (e) =&gt; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.preventDefault();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dropZone.style.borderColor = '#4dff88';</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;});</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;dropZone.addEventListener('dragleave', () =&gt; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dropZone.style.borderColor = '#ff4d4d';</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;});</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;dropZone.addEventListener('drop', (e) =&gt; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.preventDefault();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;handleFile(e.dataTransfer.files[0]);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;});</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;function handleFile(file) {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (!file) return;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const reader = new FileReader();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reader.onload = (e) =&gt; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const text = e.target.result;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const lines = text.split('\n');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const stats = {};</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lines.forEach(l =&gt; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const p = l.split('=');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(p.length === 2) stats[p[0].trim()] = p[1].trim();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;});</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const name = stats['CharacterName'] || 'Dino';</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const level = stats['CharacterLevel'] || '0';</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;let md = "### 🦖 Ficha de " + name + " (Lvl " + level + ")\n\n";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md += "| Stat | Puntos (Wild) |\n";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md += "| :--- | :--- |\n";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md += "| ❤️ Vida | " + (stats['HealthPoints'] || 0) + " pts |\n";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md += "| ⚡ Stamina | " + (stats['StaminaPoints'] || 0) + " pts |\n";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md += "| ⚖️ Peso | " + (stats['WeightPoints'] || 0) + " pts |\n";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md += "| ⚔️ Daño | " + (stats['MeleeDamagePoints'] || 0) + " pts |\n";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md += "| 🏃 Vel. | " + (stats['SpeedPoints'] || 0) + " pts |\n\n";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md += "---";</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;mdOutput.value = md;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;outputContainer.style.display = 'block';</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;statusText.innerText = "✅ ARCHIVO CARGADO";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;statusText.style.color = "#4dff88";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;};</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reader.readAsText(file);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;}</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;copyBtn.addEventListener('click', () =&gt; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;mdOutput.select();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;document.execCommand('copy');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;alert('¡Copiado! Pégalo en tu página personal.');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;});</p>
+<p>&nbsp; &nbsp;})();</p>
+<p>&lt;/script&gt;</p>
