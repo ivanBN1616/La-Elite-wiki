@@ -1,0 +1,32 @@
+<!--
+title: Importador Genético
+description: 
+published: true
+date: 2026-01-23T05:43:56.157Z
+tags: 
+editor: ckeditor
+dateCreated: 2026-01-23T05:39:45.719Z
+-->
+
+<h1 id="importador-genético-de-la-élite" class="toc-header"> 📥 Importador Genético de La Élite</h1>
+<p>Arrastra tu archivo <code>.ini</code> de exportación (localizado en <code>ARKSA/Saved/DinoExports</code>) para obtener el código de tu ficha.</p><div>
+
+</div><div style="background: #111; padding: 20px; border-radius: 10px; border: 1px solid #333; font-family: sans-serif; color: white;">
+<pre class="prismjs line-numbers" v-pre="true"><code class="language-">&lt;div id="drop-area" style="border: 2px dashed #ff4d4d; padding: 30px; text-align: center; border-radius: 10px; cursor: pointer; background: #0a0a0a;"&gt;
+    &lt;p style="margin: 0; font-size: 1.1em;"&gt;📁 Arrastra tu archivo de exportación aquí&lt;/p&gt;
+    &lt;p style="color: #888; font-size: 0.8em; margin-top: 10px;"&gt;O haz clic para buscarlo en tu PC&lt;/p&gt;
+    &lt;input type="file" id="fileSelector" style="display: none;" accept=".ini"&gt;
+&lt;/div&gt;
+
+&lt;div id="preview-section" style="display: none; margin-top: 20px;"&gt;
+    &lt;h4 style="color: #4dff88; margin-bottom: 10px;"&gt;✅ Código Generado:&lt;/h4&gt;
+    &lt;div style="background: #000; padding: 15px; border-radius: 5px; border: 1px solid #444;"&gt;
+        &lt;pre id="md-result" style="white-space: pre-wrap; color: #ccc; font-family: monospace; font-size: 0.9em; margin: 0;"&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;button id="copy-btn" style="margin-top: 15px; background: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;"&gt;
+        Copiar Código
+    &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
