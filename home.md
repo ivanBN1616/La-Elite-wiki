@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2026-01-24T05:35:23.623Z
+date: 2026-01-24T05:35:58.357Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T01:14:07.161Z
@@ -17,7 +17,7 @@ Bienvenido a la base de datos oficial de la tribu. Aquí encontrarás la intelig
 
 ## 🧭 Navegación Rápida
 
-`<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
 
   <a href="/mapa" style="text-decoration: none;">
     <div style="background: #1a1a1a; border: 1px solid #00d4ff; padding: 20px; border-radius: 10px; text-align: center;">
@@ -47,7 +47,7 @@ Bienvenido a la base de datos oficial de la tribu. Aquí encontrarás la intelig
     </div>
   </a>
 
-</div>`
+</div>
 
 ---
 
