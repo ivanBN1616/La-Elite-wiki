@@ -2,16 +2,22 @@
 title: Criaturas
 description: 
 published: true
-date: 2026-01-24T05:45:28.961Z
+date: 2026-01-24T05:49:05.032Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-22T21:57:03.000Z
 ---
 
-🦖 Enciclopedia de Criaturas - La Élite
+# 🦖 Enciclopedia de Criaturas - La Élite
+
 Bienvenidos al registro central de especímenes de la tribu. Aquí gestionamos nuestro catálogo genético y táctico para ARK Survival Ascended. Selecciona una categoría para ver los dinos disponibles y sus estadísticas.
 
+---
+
 🏛️ Directorio de Clases
+
+---
+
 <a href="/criaturas/carnivoros" style="text-decoration: none;"> <blockquote style="background: #2a1010; border-left: 10px solid #ff4d4d; border-right: 2px solid #ff4d4d; border-top: 2px solid #ff4d4d; border-bottom: 2px solid #ff4d4d; border-radius: 10px; padding: 15px; margin: 15px 0;"> <h2 style="margin: 0; color: #ff4d4d;">🥩 CARNÍVOROS</h2> <p style="margin: 5px 0 0 0; color: #ccc; font-size: 0.9em;">Depredadores, unidades de asalto y fuerza de combate principal.</p> </blockquote> </a>
 
 <a href="/criaturas/hervivoros" style="text-decoration: none;"> <blockquote style="background: #102a10; border-left: 10px solid #4dff88; border-right: 2px solid #4dff88; border-top: 2px solid #4dff88; border-bottom: 2px solid #4dff88; border-radius: 10px; padding: 15px; margin: 15px 0;"> <h2 style="margin: 0; color: #4dff88;">🍃 HERBÍVOROS</h2> <p style="margin: 5px 0 0 0; color: #ccc; font-size: 0.9em;">Especialistas en recolección de recursos, tanques de asedio y soporte.</p> </blockquote> </a>
