@@ -2,7 +2,7 @@
 title: Importar criatura
 description: 
 published: true
-date: 2026-01-24T06:38:14.030Z
+date: 2026-01-24T06:45:36.845Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T06:38:14.030Z
@@ -48,7 +48,7 @@ dateCreated: 2026-01-24T06:38:14.030Z
       <span style="color:#888; font-weight:bold; font-size:1em; display:block;">⬅️ VOLVER A TOOLS</span>
     </div>
   </a>
-  <a href="/tools/registro-manual" style="text-decoration:none!important; flex:1; min-width:200px; display:block!important;">
+  <a href="/herramientas/registro-stats" style="text-decoration:none!important; flex:1; min-width:200px; display:block!important;">
     <div style="background:#1a1a1a; border:1px solid #4dff88; border-left:6px solid #4dff88; padding:15px; border-radius:8px; text-align:center;">
       <span style="color:#4dff88; font-weight:bold; font-size:1em; display:block;">📝 REGISTRO MANUAL</span>
     </div>
