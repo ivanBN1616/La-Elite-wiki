@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2026-01-24T06:10:24.777Z
+date: 2026-01-24T06:10:49.667Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T01:14:07.161Z
@@ -38,7 +38,6 @@ Bienvenido a la base de datos oficial de la tribu. Aquí encontrarás la intelig
       <span style="color:#888; font-size:0.8em; display:block;">Bosses y Tameo</span>
     </div>
   </a>
-  
 </div>
 ---
 
