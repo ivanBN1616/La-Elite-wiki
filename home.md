@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2026-01-24T01:54:16.290Z
+date: 2026-01-24T02:35:20.633Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T01:14:07.161Z
@@ -19,7 +19,7 @@ Bienvenido a la base de datos oficial de la tribu. Aquí encontrarás la intelig
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
 
-  <a href="/mapas" style="text-decoration: none;">
+  <a href="/mapa" style="text-decoration: none;">
     <div style="background: #1a1a1a; border: 1px solid #00d4ff; padding: 20px; border-radius: 10px; text-align: center;">
       <h2 style="margin: 0; color: #00d4ff;">🗺️ MAPAS</h2>
       <small style="color: #ccc;">Recursos y Coordenadas</small>
