@@ -2,7 +2,7 @@
 title: Herramientas
 description: 
 published: true
-date: 2026-01-24T06:26:27.534Z
+date: 2026-01-24T06:29:42.803Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T06:26:27.534Z
