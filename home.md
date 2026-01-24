@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2026-01-24T05:35:58.357Z
+date: 2026-01-24T05:38:28.167Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T01:14:07.161Z
@@ -16,6 +16,8 @@ Bienvenido a la base de datos oficial de la tribu. Aquí encontrarás la intelig
 ---
 
 ## 🧭 Navegación Rápida
+
+---
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
 
