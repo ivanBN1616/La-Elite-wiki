@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2026-01-24T06:09:31.414Z
+date: 2026-01-24T06:10:24.777Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T01:14:07.161Z
@@ -38,12 +38,7 @@ Bienvenido a la base de datos oficial de la tribu. Aquí encontrarás la intelig
       <span style="color:#888; font-size:0.8em; display:block;">Bosses y Tameo</span>
     </div>
   </a>
-  <a href="/tribu/top-stats" style="text-decoration:none!important; flex:1; min-width:200px; display:block!important;">
-    <div style="background:#1a1a1a; border:1px solid #bc4dff; border-left:6px solid #bc4dff; padding:15px; border-radius:8px; text-align:center;">
-      <span style="color:#bc4dff; font-weight:bold; font-size:1.1em; display:block;">🏆 RÉCORDS</span>
-      <span style="color:#888; font-size:0.8em; display:block;">Hall of Fame</span>
-    </div>
-  </a>
+  
 </div>
 ---
 
