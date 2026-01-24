@@ -2,7 +2,7 @@
 title: Registro de Stats
 description: 
 published: true
-date: 2026-01-24T06:47:59.944Z
+date: 2026-01-24T06:48:12.997Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T06:30:49.105Z
