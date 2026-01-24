@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2026-01-24T02:35:20.633Z
+date: 2026-01-24T02:36:41.914Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T01:14:07.161Z
@@ -59,7 +59,7 @@ Bienvenido a la base de datos oficial de la tribu. Aquí encontrarás la intelig
 ---
 
 ## 🛠️ Herramientas de Supervivencia
-* 🧬 **[Importador de ADN](/herramientas/importador)** - Registra tus criaturas.
+* 🧬 **[Importador de ADN](/herramientas/registro-dinos)** - Registra tus criaturas.
 * 🧪 **[Calculadora de Kibble](/guias/recetas-kibbles)** - Recetas y huevos.
 * 📅 **[Calendario de Eventos](/eventos)** - Próximos Bosses y Raids.
 
