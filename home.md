@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2026-01-24T06:15:21.827Z
+date: 2026-01-24T06:16:12.602Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-24T01:14:07.161Z
@@ -20,7 +20,7 @@ Bienvenido a la base de datos oficial de la tribu. Aquí encontrarás la intelig
 ---
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
-  <a href="/mapa/the-island" style="text-decoration:none!important; flex:1; min-width:200px; display:block!important;">
+  <a href="/mapa/lost-colony" style="text-decoration:none!important; flex:1; min-width:200px; display:block!important;">
     <div style="background:#1a1a1a; border:1px solid #00d4ff; border-left:6px solid #00d4ff; padding:15px; border-radius:8px; text-align:center;">
       <span style="color:#00d4ff; font-weight:bold; font-size:1.1em; display:block;">🗺️ MAPAS</span>
       <span style="color:#888; font-size:0.8em; display:block;">Recursos y Coordenadas</span>
