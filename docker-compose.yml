@@ -17,6 +17,7 @@ services:
       - db
     volumes:
       - ./wiki-storage:/wiki-data-internal
+      - ./favicon.ico:/wiki/assets/favicon.ico
     environment:
       DB_TYPE: postgres
       DB_HOST: db
