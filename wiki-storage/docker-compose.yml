@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:11-alpine
+    container_name: elite-db
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: elitepassword123
+      POSTGRES_USER: wikijs
+    restart: always
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+
+  wiki:
+    image: ghcr.io/requarks/wiki:2
+    container_name: elite-app
+    depends_on:
+      - db
+    volumes:
+      - ./wiki-storage:/wiki-data-internal
+      - ./favicon.ico:/wiki/assets/favicon.ico
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: wikijs
+      DB_PASS: elitepassword123
+      DB_NAME: wiki
+      GIT_SAFE_DIRECTORY: /wiki-data-internal
+    restart: always
+    ports:
+      - "80:3000"
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: elite-tunnel
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: tunnel --no-autoupdate run --token eyJhIjoiNWM3NjI3OTM5NWVkM2U3MDhkZTliYzY0ZjE4NGYyYmIiLCJ0IjoiYzljNjQ0YjItYjgzNS00NDhhLTk3MDQtOTg2MDBiMTlhNGE5IiwicyI6Ik1XWmpaRE0wWlRRdFpXUTFZeTAwTkRWa0xXSXpObVl0TVdKaU9EZGtabVUwWWpWbSJ9
