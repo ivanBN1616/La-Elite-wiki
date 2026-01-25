@@ -17,7 +17,7 @@ services:
       - db
     volumes:
       - ./wiki-storage:/wiki-data-internal
-      - ./laelite-v1.png:/wiki/assets/laelite-v1.png
+      
     environment:
       DB_TYPE: postgres
       DB_HOST: db
