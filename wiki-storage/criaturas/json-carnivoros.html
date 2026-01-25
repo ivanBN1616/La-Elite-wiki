@@ -1,0 +1,68 @@
+<!--
+title: Lista de carnivoros
+description: 
+published: true
+date: 2026-01-25T15:22:27.013Z
+tags: 
+editor: code
+dateCreated: 2026-01-25T15:19:47.106Z
+-->
+
+<div id="elite-app" style="background: #121212; border-radius: 12px; padding: 25px; border: 1px solid #333;">
+    <div style="margin-bottom: 30px;">
+        <input type="text" id="eliteSearch" oninput="runEliteFilter()" placeholder="🔍 BUSCAR CRIATURA (REX, GIGA, TUSO...)" 
+               style="width: 100%; padding: 15px; background: #000; border: 2px solid #4dc3ff; color: #4dc3ff; border-radius: 8px; font-weight: bold; letter-spacing: 1px;">
+    </div>
+
+    <div id="tier-s-section">
+        <h2 style="color: #ff4d4d; border-bottom: 1px solid #ff4d4d; padding-bottom: 5px;">🔥 TIER S - DEPÓSITO ALPHA</h2>
+        <div id="results-s" style="margin-top: 15px;"></div>
+    </div>
+
+    <div id="tier-ab-section" style="margin-top: 40px;">
+        <h2 style="color: #ffa64d; border-bottom: 1px solid #ffa64d; padding-bottom: 5px;">🏃 TIER A/B - UTILIDAD Y EXPLORACIÓN</h2>
+        <div id="results-ab" style="margin-top: 15px;"></div>
+    </div>
+</div>
+
+<script>
+// DATA INTEGRADA PARA EVITAR FALLOS DE PERMISOS GIT
+const ELITE_JSON = [
+    { n: "Giganotosaurio", t: "S", r: "Asalto / DPS", s: "⚔️ 55+ M", c: "Carnívoro", h: "Tierra" },
+    { n: "Rex", t: "S", r: "Bosses / Tanque", s: "❤️ 50+ V", c: "Carnívoro", h: "Tierra" },
+    { n: "Carcharodontosaurus", t: "S", r: "Limpieza Masiva", s: "⚔️ 50+ M", c: "Carnívoro", h: "Tierra" },
+    { n: "Tusoteuthis", t: "S", r: "Control Marino", s: "⚔️ 45+ M", c: "Acuático", h: "Mar" },
+    { n: "Basilosaurio", t: "S", r: "Tanque Inmune", s: "❤️ 50+ V", c: "Acuático", h: "Mar" },
+    { n: "Thylacoleo", t: "A", r: "Cuevas / Trepar", s: "⚔️ 50+ M", c: "Carnívoro", h: "Tierra" },
+    { n: "Baryonyx", t: "S", r: "Cuevas / Mixto", s: "❤️ 40+ V", c: "Carnívoro", h: "Mixto" },
+    { n: "Yutyrannus", t: "S", r: "Buffer (Rugido)", s: "⚡ 40+ S", c: "Carnívoro", h: "Tierra" }
+    // Puedes seguir pegando aquí el resto de los 120
+];
+
+function runEliteFilter() {
+    const term = document.getElementById('eliteSearch').value.toLowerCase();
+    
+    const buildTable = (data) => {
+        if(data.length === 0) return "<p style='color:#555'>No se encontraron coincidencias...</p>";
+        let h = '<table style="width:100%; border-collapse: collapse; color: white;">';
+        h += '<tr style="text-align:left; color:#888; font-size: 0.8em; text-transform:uppercase;"><th style="padding:10px;">Criatura</th><th style="padding:10px;">Rol</th><th style="padding:10px;">Breeding</th></tr>';
+        
+        data.forEach(d => {
+            h += `<tr style="border-bottom: 1px solid #222; transition: 0.3s;" onmouseover="this.style.background='#1a1a1a'" onmouseout="this.style.background='transparent'">
+                <td style="padding:12px;"><strong>${d.n}</strong><br><span style="font-size:0.7em; color:#4dc3ff;">#${d.c}</span></td>
+                <td style="padding:12px; font-size:0.9em;">${d.r}</td>
+                <td style="padding:12px;"><span style="background:#333; padding:3px 8px; border-radius:4px; font-family:monospace; border:1px solid #444;">${d.s}</span></td>
+            </tr>`;
+        });
+        return h + '</table>';
+    };
+
+    const filtered = ELITE_JSON.filter(d => d.n.toLowerCase().includes(term) || d.c.toLowerCase().includes(term));
+    
+    document.getElementById('results-s').innerHTML = buildTable(filtered.filter(d => d.t === 'S'));
+    document.getElementById('results-ab').innerHTML = buildTable(filtered.filter(d => d.t === 'A' || d.t === 'B'));
+}
+
+// Inicializar
+setTimeout(runEliteFilter, 200);
+</script>

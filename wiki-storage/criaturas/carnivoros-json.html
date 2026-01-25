@@ -1,0 +1,85 @@
+<!--
+title: Lista de carnivoros
+description: 
+published: true
+date: 2026-01-25T15:15:08.848Z
+tags: 
+editor: code
+dateCreated: 2026-01-25T15:15:08.848Z
+-->
+
+<div id="wiki-app">
+    <div class="search-container">
+        <input type="text" id="mainSearch" onkeyup="renderWiki()" placeholder="🔍 Buscar por nombre o rol..." class="wiki-input">
+        
+        <div class="tag-filters">
+            <button onclick="setTag('todos')" class="tag-btn active">Todos</button>
+            <button onclick="setTag('carnivoro')" class="tag-btn">🥩 Carnívoros</button>
+            <button onclick="setTag('acuaticos')" class="tag-btn">🌊 Acuáticos</button>
+            <button onclick="setTag('voladores')" class="tag-btn">🦅 Voladores</button>
+        </div>
+    </div>
+
+    <div class="section-title">🔥 Tier S (Meta)</div>
+    <div id="tier-s-root"></div>
+
+    <div class="section-title">🏃 Tier A (Exploración)</div>
+    <div id="tier-a-root"></div>
+</div>
+
+<script>
+// TU JSON DE BD (Compactado)
+const ARK_DATA = [
+    { id: "rex", nombre: "Rex", tier: "S", cat: "carnivoro", rol: "Bosses", stat: "❤️ 50+" },
+    { id: "giga", nombre: "Giganoto", tier: "S", cat: "carnivoro", rol: "Asalto", stat: "⚔️ 55+" },
+    { id: "bary", nombre: "Baryonyx", tier: "S", cat: "acuaticos", rol: "Cuevas", stat: "❤️ 40+" },
+    { id: "thyla", nombre: "Thylacoleo", tier: "A", cat: "carnivoro", rol: "Escalada", stat: "⚔️ 50+" }
+    // Aquí pegas el resto de tu lista
+];
+
+let activeTag = 'todos';
+
+function setTag(tag) {
+    activeTag = tag;
+    document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    renderWiki();
+}
+
+function renderWiki() {
+    const query = document.getElementById('mainSearch').value.toLowerCase();
+    
+    const filterData = (tier) => ARK_DATA.filter(d => 
+        d.tier === tier && 
+        (activeTag === 'todos' || d.cat === activeTag) &&
+        d.nombre.toLowerCase().includes(query)
+    );
+
+    document.getElementById('tier-s-root').innerHTML = createTable(filterData('S'));
+    document.getElementById('tier-a-root').innerHTML = createTable(filterData('A'));
+}
+
+function createTable(data) {
+    if (data.length === 0) return "<p class='no-results'>Sin coincidencias</p>";
+    let html = `<table class="wiki-table"><thead><tr><th>Dino</th><th>Rol</th><th>Smart</th></tr></thead><tbody>`;
+    data.forEach(d => {
+        html += `<tr><td><strong>${d.nombre}</strong></td><td>${d.rol}</td><td><span class="badge">${d.stat}</span></td></tr>`;
+    });
+    return html + "</tbody></table>";
+}
+
+// Inicialización
+setTimeout(renderWiki, 100);
+</script>
+
+<style>
+    .wiki-input { width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #444; background: #1a1a1a; color: white; margin-bottom: 10px; }
+    .tag-filters { margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag-btn { padding: 6px 15px; border-radius: 20px; border: none; background: #333; color: #ccc; cursor: pointer; transition: 0.3s; }
+    .tag-btn.active { background: #4dc3ff; color: #000; font-weight: bold; }
+    .section-title { font-size: 1.5rem; border-left: 4px solid #4dc3ff; padding-left: 10px; margin: 30px 0 15px; }
+    .wiki-table { width: 100%; border-collapse: collapse; background: #222; }
+    .wiki-table th { background: #333; padding: 10px; text-align: left; color: #4dc3ff; }
+    .wiki-table td { padding: 10px; border-bottom: 1px solid #333; }
+    .badge { background: #444; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+</style>
