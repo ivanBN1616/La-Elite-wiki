@@ -2,7 +2,7 @@
 title: Carnívoros 
 description: 
 published: true
-date: 2026-01-25T17:35:57.736Z
+date: 2026-01-26T00:32:10.408Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-23T01:23:07.414Z
@@ -58,21 +58,21 @@ dateCreated: 2026-01-23T01:23:07.414Z
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/carcha" style="background:#222; color:#4dc3ff; border:1px solid #4dc3ff; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/giganotosaurus.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/d/d3/Giganotosaurus.png/revision/latest/scale-to-width-down/43?cb=20160131192038" style="width:55px; border-radius:4px; border:1px solid #444;filter: brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Giganotosaurus</b><br><span style="color:#555; font-size:0.65rem;">ID: #042</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Asalto Pesado / DPS Bruto</td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/giga" style="background:#222; color:#4dc3ff; border:1px solid #4dc3ff; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/rex.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/5/5f/Rex.png/revision/latest/scale-to-width-down/43?cb=20150615111544" style="width:55px; border-radius:4px; border:1px solid #444; filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">T-Rex</b><br><span style="color:#555; font-size:0.65rem;">ID: #001</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Tanque de Guerra / Bosses</td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/rex" style="background:#222; color:#4dc3ff; border:1px solid #4dc3ff; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/yutyrannus.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/b/b8/Yutyrannus.png/revision/latest/scale-to-width-down/43?cb=20170530114548" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Yutyrannus</b><br><span style="color:#555; font-size:0.65rem;">ID: #098</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Apoyo Táctico / Grito de Guerra</td>
@@ -90,28 +90,28 @@ dateCreated: 2026-01-23T01:23:07.414Z
     <th style="padding:12px; border:1px solid #333; width:120px;">Acción</th>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/thylacoleo.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/2/22/Thylacoleo.png/revision/latest/scale-to-width-down/43?cb=20160116233202" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Thylacoleo</b><br><span style="color:#555; font-size:0.65rem;">ID: #065</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Escalada y Guerrilla</td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/thyla" style="background:#222; color:#ffa64d; border:1px solid #ffa64d; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/shadowmane.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/e/e8/Shadowmane.png/revision/latest/scale-to-width-down/43?cb=20210429073217" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Shadowmane</b><br><span style="color:#555; font-size:0.65rem;">ID: #112</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Sigilo e Infiltración</td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/shadow" style="background:#222; color:#ffa64d; border:1px solid #ffa64d; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/baryonyx.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c0/Baryonyx.png/revision/latest/scale-to-width-down/43?cb=20150912191622" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Baryonyx</b><br><span style="color:#555; font-size:0.65rem;">ID: #023</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Cuevas y Control Acuático</td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/bary" style="background:#222; color:#ffa64d; border:1px solid #ffa64d; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/spino.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/0/03/Spino.png/revision/latest/scale-to-width-down/43?cb=20150618193803" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Spinosaurio</b><br><span style="color:#555; font-size:0.65rem;">ID: #011</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">DPS Mixto Tierra/Agua</td>
@@ -129,21 +129,21 @@ dateCreated: 2026-01-23T01:23:07.414Z
     <th style="padding:12px; border:1px solid #333; width:120px;">Acción</th>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/tusoteuthis.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/3/37/Tusoteuthis.png/revision/latest/scale-to-width-down/43?cb=20150912193044" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Tusoteuthis</b><br><span style="color:#555; font-size:0.65rem;">ID: #077</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Control y Sujeción</td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/tuso" style="background:#222; color:#4dc3ff; border:1px solid #4dc3ff; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/basilosaurus.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/7/73/Basilosaurus.png/revision/latest/scale-to-width-down/43?cb=20170924191136" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Basilosaurio</b><br><span style="color:#555; font-size:0.65rem;">ID: #054</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Tanque / Inmunidad Eléctrica</td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/basilo" style="background:#222; color:#4dc3ff; border:1px solid #4dc3ff; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/mosasaurus.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/b/b0/Mosasaurus.png/revision/latest/scale-to-width-down/43?cb=20150912192656" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Mosasaurus</b><br><span style="color:#555; font-size:0.65rem;">ID: #039</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Acorazado de Asalto Marino</td>
@@ -161,14 +161,14 @@ dateCreated: 2026-01-23T01:23:07.414Z
     <th style="padding:12px; border:1px solid #333; width:120px;">Acción</th>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/daeodon.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/5/5f/Daeodon.png/revision/latest/scale-to-width-down/43?cb=20170506191250" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Daeodon</b><br><span style="color:#555; font-size:0.65rem;">ID: #091</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Curación en Área</td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><a href="/criaturas/carnivoros/daeodon" style="background:#222; color:#b380ff; border:1px solid #b380ff; padding:5px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold; text-decoration:none;">EXPEDIENTE</a></td>
   </tr>
   <tr>
-    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://wikily.gg/cdn-cgi/image/width=576,format=auto/https://r2.wikily.gg/images/ark/dossiers/snow_owl.webp" style="width:55px; border-radius:4px; border:1px solid #444;"></td>
+    <td style="padding:10px; text-align:center; border:1px solid #222;"><img src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/4/4b/Snow_Owl.png/revision/latest/scale-to-width-down/43?cb=20181107170156" style="width:55px; border-radius:4px; border:1px solid #444;filter:brightness(0) invert(1)"></td>
     <td style="padding:10px; border:1px solid #222;"><b style="font-size:0.95rem;">Snow Owl</b><br><span style="color:#555; font-size:0.65rem;">ID: #105</span></td>
     <td style="padding:10px; text-align:center; border:1px solid #222;"><span style="background:#2e7d32; color:#a5d6a7; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">TAM</span> <span style="background:#1565c0; color:#90caf9; padding:2px 5px; border-radius:3px; font-size:0.6rem; font-weight:bold;">BRE</span></td>
     <td style="padding:10px; border:1px solid #222; font-size:0.85rem;">Radar y Sanación Criogénica</td>
